@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>Formulario para agregar libros</h3>
+        </div>
+        <div class="row">
+            <form #miFormulario="ngForm" (ngSubmit)="validate(miFormulario)">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" name="nombre" ngModel required maxlength="250" [(ngModel)]="limpiarLibro.nombre">
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Descripcion" name="descripcion" ngModel required [(ngModel)]="limpiarLibro.descripcion">
+                    <label for="floatingInput">Descripcion</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingPassword" placeholder="Autor" name="autor" ngModel maxlength="300" required [(ngModel)]="limpiarLibro.autor">
+                    <label for="floatingPassword">Autor</label>
+                </div>
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="floatingPassword" placeholder="Año de publicación" name="anioPublicacion" ngModel required minlength="1" maxlength="300" [(ngModel)]="limpiarLibro.anioPublicacion">
+                    <label for="floatingPassword">Año de publicación</label>
+                </div>
+                <label for="aria-label">Categoria</label>
+                <select class="form-select" aria-label="Categoria" name="categoria">
+                    <option value="1" selected>Aventura</option>
+                    <option value="2">Suspenso</option>
+                    <option value="3">Comedia</option>
+                    <option value="4">Romance</option>
+                    <option value="5">Educativo</option>
+                    <option value="6">Misterio</option>
+                    <option value="7">Otros</option>
+                  </select>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingPassword" placeholder="Link de Imagen" name="imagen" ngModel required [(ngModel)]="limpiarLibro.imagen">
+                    <label for="floatingPassword">Link de Imagen</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingPassword" placeholder="Link de Venta" name="link" ngModel required [(ngModel)]="limpiarLibro.link">
+                    <label for="floatingPassword">Link de Venta</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" name="usuario" ngModel required maxlength="300" [(ngModel)]="limpiarLibro.usuario">
+                    <label for="floatingInput">Usuario</label>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="miFormulario.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

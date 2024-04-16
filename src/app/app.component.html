@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <app-contenedor-biblioteca></app-contenedor-biblioteca>
+  <app-tarjeta-libros [listadoLibros] = "libros" [listadoLibrosAlquilados]="librosAlquilados"></app-tarjeta-libros>
+  <br><hr><br>
+  <h1 style="text-align: center;"><strong>FORMULARIOS</strong></h1>
+  <app-add-libro (nuevoLibro)="onAgregarLibros($event)"></app-add-libro>
+  <br>
+  <app-rent-libro [listadoLibros]="libros" (librosAlquilados)="onAgregarLibrosAlquilados($event)"></app-rent-libro>
+</body>
+</html>
